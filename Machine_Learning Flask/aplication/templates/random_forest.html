@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Train Random Forest</title>
+</head>
+<body class="container mt-5">
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Train Random Forest</h1>
+            <form action="/show_results_random_forest" method="post">
+                <div class="mb-3">
+                    <label for="n_estimators" class="form-label">Number of Estimators:</label>
+                    <input type="number" class="form-control" name="n_estimators" value="100" required>
+                </div>
+                <div class="mb-3">
+                    <label for="criterion" class="form-label">Criterion:</label>
+                    <select class="form-select" name="criterion" required>
+                        <option value="gini" selected>Gini</option>
+                        <option value="entropy">Entropy</option>
+                        <option value="log_loss">Log_loss</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="max_depth" class="form-label">Max Depth:</label>
+                    <input type="number" class="form-control" name="max_depth" value="None" required>
+                </div>
+                <div class="mb-3">
+                    <label for="min_samples_split" class="form-label">Min Samples Split:</label>
+                    <input type="number" class="form-control" name="min_samples_split" value="2" min="2" required>
+                </div>
+                <div class="mb-3">
+                    <label for="min_samples_leaf" class="form-label">Min Samples Leaf:</label>
+                    <input type="number" class="form-control" name="min_samples_leaf" value="1" min="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Train and Show Results</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Train KNN</title>
+</head>
+<body class="container mt-5">
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Train KNN</h1>
+            <form action="/show_results_knn" method="post">
+                <div class="mb-3">
+                    <label for="n_neighbors" class="form-label">Number of Neighbors:</label>
+                    <input type="number" class="form-control" id="n_neighbors" name="n_neighbors" value="5" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Train and Show Results</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

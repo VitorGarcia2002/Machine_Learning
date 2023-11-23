@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Train SVM</title>
+</head>
+<body class="container mt-5">
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Train SVM</h1>
+            <form action="/show_results_svm" method="post">
+                <div class="mb-3">
+                    <label for="C" class="form-label">C:</label>
+                    <input type="number" class="form-control" name="C" value="1.0" required>
+                </div>
+                <div class="mb-3">
+                    <label for="kernel" class="form-label">Kernel:</label>
+                    <select class="form-select" name="kernel" required>
+                        <option value="linear">Linear</option>
+                        <option value="poly">Poly</option>
+                        <option value="rbf" selected>RBF</option>
+                        <option value="sigmoid">Sigmoid</option>
+                        <option value="precomputed">Precomputed</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="gamma" class="form-label">Gamma:</label>
+                    <select class="form-select" name="gamma" required>
+                        <option value="scale" selected>Scale</option>
+                        <option value="auto">Auto</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Train and Show Results</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

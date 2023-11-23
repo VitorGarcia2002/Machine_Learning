@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Train Decision Tree</title>
+</head>
+<body class="container mt-5">
+    <h1 class="display-4">Train Decision Tree</h1>
+    <form action="/show_results_decision_tree" method="post" class="mt-3">
+        <div class="mb-3">
+            <label for="max_depth" class="form-label">Max Depth:</label>
+            <input type="number" name="max_depth" value="3" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="min_samples_split" class="form-label">Min Samples Split:</label>
+            <input type="number" name="min_samples_split" value="2" min="2" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="min_samples_leaf" class="form-label">Min Samples Leaf:</label>
+            <input type="number" name="min_samples_leaf" value="1" min="1" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Train and Show Results</button>
+    </form>
+</body>
+</html>

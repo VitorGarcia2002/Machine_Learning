@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Results</title>
+</head>
+<body class="container mt-5">
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Results for {{ classifier }}</h1>
+            <p class="card-text">Accuracy: {{ accuracy }}</p>
+            <p class="card-text">Macro Average F1-Score: {{ macro_f1 }}</p>
+            <img class="img-fluid" src="data:image/png;base64,{{ plot_url }}" alt="Confusion Matrix">
+            <br>
+            <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>

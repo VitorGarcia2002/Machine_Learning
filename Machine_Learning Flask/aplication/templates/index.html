@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Machine Learning</title>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="jumbotron bg-primary text-white text-center">
+            <h1 class="display-4">Bem Vindo !</h1>
+            <p class="lead">escolha um classificador.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="list-group">
+                    <a href="/train_knn" class="list-group-item list-group-item-action">
+                        K-Nearest Neighbors (KNN)
+                    </a>
+                    <a href="/train_decision_tree" class="list-group-item list-group-item-action">
+                        Train Decision Tree
+                    </a>
+                    <a href="/train_svm" class="list-group-item list-group-item-action">
+                        Train SVM
+                    </a>
+                    <a href="/train_random_forest" class="list-group-item list-group-item-action">
+                        Train Random Forest
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center mt-3">Explore other options and features as needed.</p>
+    </div>
+
+</body>
+</html>
